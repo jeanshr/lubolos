@@ -1,0 +1,72 @@
+/*
+* 
+* @author Caick Marques / Jean Cunha
+* @version 0.1
+*/
+
+/* ========================= layout ======================== */
+html, body, .capa {
+	height: 100%;
+}
+
+body {
+	background: url('img/capa.png'),
+	url('img/ruido.png'),
+	linear-gradient(50deg,#D9E3C8,#D9E3C8);
+	background-attachment: fixed;
+	font-family: Helvetica,Arial,sans-serif;
+	background-size: cover;
+}
+
+
+/*==================== Barra de navegação ==================*/
+.img-logo{
+	height: 150px;
+	width: 150px;
+	margin-top: 25px;
+}
+
+.navbar{
+	/*border: black 1px solid;*/
+	height: 75px;
+	margin-top: 25px;
+	background-color: #DA0D45;
+}
+
+.barra_superior {
+	background-color: #fff;
+
+}
+
+.container-fluid{
+	background-color: #fff;
+	display: table;
+	position: fixed;
+}
+
+.navbar-collapse{
+	padding-left: 600px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #fff;
+	font-size: 17px;
+	padding-right: 50px;
+}
+
+.barra-redes-sociais{
+	width: 27px;
+	float: right;
+	margin-right: 15px;
+}
+
+.barra-redes-sociais:hover{
+	width: 28px;
+	
+}
+
+/*========================== Capa ============================*/
+.capa {
+	display: table;
+	width: 100%;
+}
