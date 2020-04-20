@@ -1,10 +1,10 @@
 /*
 * 
 * @author Caick Marques / Jean Cunha
-* @version 0.1
+* @version 0.2
 */
 
-/* ========================= layout ======================== */
+/* ============== layout ============== */
 html, body, .capa {
 	height: 100%;
 }
@@ -17,56 +17,41 @@ body {
 	font-family: Helvetica,Arial,sans-serif;
 	background-size: cover;
 }
-
-
-/*==================== Barra de navegação ==================*/
-.img-logo{
-	height: 150px;
-	width: 150px;
-	margin-top: 25px;
-}
-
+/*========== Navbar ==========*/
 .navbar{
-	/*border: black 1px solid;*/
-	height: 75px;
-	margin-top: 25px;
-	background-color: #DA0D45;
+	margin-top: 30px;
 }
 
-.barra_superior {
-	background-color: #fff;
-
+/*========== Logo ==========*/
+.logo{
+	width: 100px;
+	position: absolute;
+	margin-top: -15px;
 }
 
-.container-fluid{
-	background-color: #fff;
-	display: table;
-	position: fixed;
-}
-
-.navbar-collapse{
-	padding-left: 600px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-	color: #fff;
-	font-size: 17px;
-	padding-right: 50px;
-}
-
+/*==========Barra redes sociais==========*/
 .barra-redes-sociais{
-	width: 27px;
+	background-color: #fff;
+	position: fixed;
+	padding-right: 10%;
+}
+.img-redes-sociais{
+	width: 30px;
+	margin-left: 15px;
 	float: right;
-	margin-right: 15px;
+}
+.img-redes-sociais:hover{
+	width: 32px;
 }
 
-.barra-redes-sociais:hover{
-	width: 28px;
-	
-}
 
-/*========================== Capa ============================*/
-.capa {
-	display: table;
-	width: 100%;
+/*========== Responsividade ==========*/
+@media (min-width: 320px) and (max-width: 768px) {
+  .logo{
+  	width: 110px;
+  	position: fixed;
+  	left: 40%;
+  } 
+
+
 }
