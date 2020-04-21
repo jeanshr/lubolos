@@ -24,15 +24,15 @@ body {
 
 /*========== Logo ==========*/
 .logo{
-	width: 100px;
+	width: 140px;
 	position: absolute;
-	margin-top: -15px;
+	margin-top: -40px;
 }
 
 /*==========Barra redes sociais==========*/
 .barra-redes-sociais{
 	background-color: #fff;
-	position: fixed;
+	position: absolute;
 	padding-right: 10%;
 }
 .img-redes-sociais{
@@ -44,14 +44,51 @@ body {
 	width: 32px;
 }
 
+/*=========Barra marro/ Logomarca=========*/
+.barra-logomarca{
+	background-color: #7E3200;
+	position: fixed;
+	margin-left: 300px;
+	margin-top: 85px;
+	border-radius: 0px 0px 170px 170px;
+	width: 291px;
+	height: 70px;
+	padding: 5px 75px;
+}
+.logomarca{
+	width: 140px;
+}
 
-/*========== Responsividade ==========*/
+/*===========Painel branco===============*/
+.painel{
+	padding-top: 180px;
+	background-color: #fff;
+}
+
+/*===========Carrossel===================*/
+.img-carrossel{
+	width: 100px;
+	height: 400px;
+}
+
+
+/*========== MEDIA QUERIES ==========*/
 @media (min-width: 320px) and (max-width: 768px) {
+
+/*========== Logo ==========*/
   .logo{
   	width: 110px;
   	position: fixed;
   	left: 40%;
-  } 
+  }
+/*=========Barra marro/ Logomarca=========*/  
+  .barra-logomarca{
+	filter: opacity(0);
+}
+
+.painel{
+	padding-top: 140px;
+}
 
 
 }
