@@ -17,6 +17,17 @@ body {
 	font-family: Helvetica,Arial,sans-serif;
 	background-size: cover;
 }
+
+/*==============Icone Whatsapp===========*/
+.whatsapp {
+	width: 80px;
+    position: fixed;
+    top: 82%;
+    left: 85%;
+    padding: 10px;
+    z-index: 10000000;
+}
+
 /*========== Navbar ==========*/
 .navbar{
 	margin-top: 30px;
@@ -52,25 +63,38 @@ body {
 	margin-top: 85px;
 	border-radius: 0px 0px 170px 170px;
 	width: 291px;
-	height: 70px;
-	padding: 5px 75px;
+	height: 50px;
+	padding: 0px 75px;
 }
 .logomarca{
 	width: 140px;
+	margin-top: -5px;
 }
 
 /*===========Painel branco===============*/
 .painel{
-	padding-top: 180px;
+	padding-top: 170px;
 	background-color: #fff;
+	width: 860px;
 }
 
 /*===========Carrossel===================*/
 .img-carrossel{
-	width: 100px;
 	height: 400px;
 }
 
+
+/*========== FIQUE LIGADO ==================*/
+.fique-ligado{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 40px;
+	margin-top: 30px;
+}
+.titulo-1{
+	text-align: center;
+	font-weight: bold;
+}
 
 /*========== MEDIA QUERIES ==========*/
 @media (min-width: 320px) and (max-width: 768px) {
@@ -88,6 +112,11 @@ body {
 
 .painel{
 	padding-top: 140px;
+	width: 450px;
+}
+
+.whatsapp{
+	left: 85%;
 }
 
 
