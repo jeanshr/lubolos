@@ -59,7 +59,8 @@ body {
 .barra-logomarca{
 	background-color: #7E3200;
 	position: fixed;
-	margin-left: 300px;
+	margin-left: 30%;
+	z-index: 100000;
 	margin-top: 85px;
 	border-radius: 0px 0px 170px 170px;
 	width: 291px;
@@ -119,5 +120,12 @@ body {
 	left: 85%;
 }
 
+}
+
+@media only screen and (min-width: 1382px) { 
+	.barra-logomarca{
+	margin-left: 30%;
+	
+}
 
 }
