@@ -102,6 +102,59 @@ body {
 	font-weight: bold;
 }
 
+/*============= TRABALHOS ====================*/
+.img-trabalhos{
+	height: 370px;
+	border: 6px solid #7E3200;
+	border-radius: 15px;
+}
+
+
+/*=============== FORMULÁRIO====================*/
+.btn-primary{
+	background-color: #DA0D45;
+	border: none;
+	border-radius: 20px;
+	width: 118px;
+}
+.btn-primary:hover{
+	background-color: #DA0D45;
+}
+
+
+/*=================MAPA===========================*/
+.mapa{
+	width: 800px;
+}
+
+
+/*=============== BARRRA INFERIOR =================*/
+footer{
+	background-color: #DA0D45;
+	padding: 30px 0px 20px 0px;
+}
+
+.titulo-rodape{
+	color: rgba(255,255,255,.5);
+}
+
+footer .navbar-nav a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.img-rodape{
+	padding-left: 20px;
+	padding-top: 20px;
+}
+.img-rodape img{
+	margin-right: 30px;
+}
+
+/*========== MEDIA QUERIES ==========*/
+/*========== MEDIA QUERIES ==========*/
+/*========== MEDIA QUERIES ==========*/
+/*========== MEDIA QUERIES ==========*/
 /*========== MEDIA QUERIES ==========*/
 @media (min-width: 320px) and (max-width: 768px) {
 
@@ -124,9 +177,13 @@ body {
 .whatsapp{
 	left: 85%;
 }
-
+/*=================MAPA===========================*/
+.mapa{
+	width: 400px;
+}
 
 }
+
 
 @media only screen and (min-width: 1382px) { 
 	.barra-logomarca{
@@ -134,4 +191,32 @@ body {
 	
 }
 
+}
+
+
+
+
+
+
+/*=========== Animação ==================*/
+[data-anime] {
+	opacity: 0;
+	transition: 1s;
+}
+
+[data-anime="left"]{
+	transform: translate3d(-50px, 0, 0);
+}
+
+[data-anime="right"]{
+	transform: translate3d(50px, 0, 0);
+}
+
+[data-anime="bottom"]{
+	transform: translate3d(0, 50px, 0);
+}
+
+[data-anime].animate {
+	opacity: 1;
+	transform: translate3d(0px, 0px, 0px);
 }

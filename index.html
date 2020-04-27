@@ -7,11 +7,42 @@
 	<!-- ============================Importação do Bootstrap================================== -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<!-- ============================Importação do estilo================================== -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 
+	<!-- ================== Criando a animação ================================================== -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $target = $('[data-anime]'),
+				animationClass = 'animate',
+				offset = $(window).height() * 3/4;
+
+		function animeScroll(){
+			var documentTop = $(document).scrollTop();
+			
+			$target.each(function() {
+				var itemTop = $(this).offset().top;
+			if(documentTop > itemTop - offset){
+				$(this).addClass(animationClass);
+			} 
+			else{
+				$(this).removeClass(animationClass);
+			}
+			})
+		}
+		$(document).scroll(function(){
+			animeScroll();
+		});
+	});
+		
+	</script>
+	<!-- ========================================================================================= -->
 
 </head>
 <body>
+	
+
 	<div class="fixed-top">
 		<div class="container-fluid barra-redes-sociais">
 			<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
@@ -28,7 +59,7 @@
 	<nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #DA0D45;">
 		<div class="container">	
 			<!-- ===Logo=== -->
-		<a href="#">
+		<a href="index.html">
 			<img src="img/lubolos.png" class="logo">
 		</a>
 			<!-- ===Menu Hamburguer=== -->
@@ -40,7 +71,7 @@
 			<div class="collapse navbar-collapse" id="nav-target">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a href="" class="nav-link">Home</a>
+						<a href="index.html" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Trabalhos</a>
@@ -55,10 +86,10 @@
 
 					</li>
 					<li class="nav-item">
-						<a href="" class="nav-link">Contato</a>
+						<a href="#contato" class="nav-link">Contato</a>
 					</li>
 					<li class="nav-item">
-						<a href="" class="nav-link">Localização</a>
+						<a href="#localizacao" class="nav-link">Localização</a>
 					</li>
 				</ul>
 			</div>
@@ -114,7 +145,7 @@
 		<div class="container">
 			<h3 class="fique-ligado">FIQUE LIGADO</h3>
 			<div class="row">
-				<div class="col-sm">
+				<div class="col-sm" data-anime="left">
 					<h4 class="titulo-1">Delivery</h4>
 					<p>Por enquanto, 
 						não 
@@ -123,7 +154,7 @@
 						de delivery.
 					</p>
 				</div>
-				<div class="col-sm">
+				<div class="col-sm" data-anime="bottom">
 					<h4 class="titulo-1">Delivery</h4>
 					<p>Por enquanto, 
 						não 
@@ -132,7 +163,7 @@
 						de delivery.
 					</p>
 				</div>
-				<div class="col-sm">
+				<div class="col-sm" data-anime="right">
 					<h4 class="titulo-1">Delivery</h4>
 					<p>Por enquanto, 
 						não 
@@ -151,9 +182,141 @@
 		</a>
 		</div>	<!-- fecha código whatsapp -->
 
-		
+		<br><br>
+		<!-- -------------------------- Trabalhos ------------------------------ -->
+		<div class="container">
+			<h3 class="fique-ligado" data-anime="bottom">TRABALHOS</h3>
+			<div class="row">
+				<div class="col-sm">
+					<img src="img/carrossel/bolo-piscina.png" class="img-trabalhos" data-anime="left">
+				</div>
+				<div class="col-sm">
+					<h4 data-anime="right">Bolos</h4>
+					<p data-anime="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet eu est sit amet faucibus. Mauris urna arcu, tempor et mattis vitae, placerat eu erat. Aliquam erat volutpat. Praesent vitae lectus pretium, varius lectus ut, dictum nisl. Donec scelerisque mi efficitur nisi vehicula posuere. Nullam luctus blandit magna, non luctus sem interdum id. Fusce quis turpis vitae arcu ultricies vehicula vel id libero. Vivamus at consectetur velit. Proin vel tortor lobortis, mollis nisl nec, bibendum dui. Sed nibh odio, cursus nec cursus quis, malesuada in leo. Nam auctor efficitur malesuada. Proin id urna ultricies lectus maximus sollicitudin. Donec et eros mollis mauris efficitur gravida.</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<!-- --------------------------------------------------------------- -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<h4 data-anime="left">Doces Simples</h4>
+					<p data-anime="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet eu est sit amet faucibus. Mauris urna arcu, tempor et mattis vitae, placerat eu erat. Aliquam erat volutpat. Praesent vitae lectus pretium, varius lectus ut, dictum nisl. Donec scelerisque mi efficitur nisi vehicula posuere. Nullam luctus blandit magna, non luctus sem interdum id. Fusce quis turpis vitae arcu ultricies vehicula vel id libero. Vivamus at consectetur velit. Proin vel tortor lobortis, mollis nisl nec, bibendum dui. Sed nibh odio, cursus nec cursus quis, malesuada in leo. Nam auctor efficitur malesuada. Proin id urna ultricies lectus maximus sollicitudin. Donec et eros mollis mauris efficitur gravida.</p>
+				</div>
+				<div class="col-sm">
+					<img src="img/carrossel/brigadeiro.png" class="img-trabalhos" data-anime="right">
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<!-- ------------------------------------------------------------------------------------ -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<img src="img/carrossel/bolo-branco.jpg" class="img-trabalhos" data-anime="left">
+				</div>
+				<div class="col-sm">
+					<h4 data-anime="right">Bolos</h4>
+					<p data-anime="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet eu est sit amet faucibus. Mauris urna arcu, tempor et mattis vitae, placerat eu erat. Aliquam erat volutpat. Praesent vitae lectus pretium, varius lectus ut, dictum nisl. Donec scelerisque mi efficitur nisi vehicula posuere. Nullam luctus blandit magna, non luctus sem interdum id. Fusce quis turpis vitae arcu ultricies vehicula vel id libero. Vivamus at consectetur velit. Proin vel tortor lobortis, mollis nisl nec, bibendum dui. Sed nibh odio, cursus nec cursus quis, malesuada in leo. Nam auctor efficitur malesuada. Proin id urna ultricies lectus maximus sollicitudin. Donec et eros mollis mauris efficitur gravida.</p>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+
+		<!-- ======================== FORMULÁRIO DE CONTATO ======================== -->
+		<div class="container" data-anime="bottom">
+			<form>			
+			<h3 class="fique-ligado" id="contato">CONTATO</h3>
+			<div class="form-group row">
+				<label for="nome" class="col-sm-2 col-form-label">Nome</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="nome" placeholder="Nome">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="email" class="col-sm-2 col-form-label">E-mail</label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control" id="email" placeholder="Email">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
+				<div class="col-sm-10">
+					<input type="phone" class="form-control" id="telefone" placeholder="Telefone">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="campoComoNosConheceu" class="col-sm-2 col-form-label">Como nos conheceu?</label>
+				<div class="col-sm-10">
+				<select id="campoComoNosConheceu" class="form-control">
+					<option selected>Escolher...</option>
+					<option>Indicação</option>
+					<option>Google</option>
+					<option>Redes sociais</option>
+					<option>Já é cliente</option>
+					<option>Feiras e eventos</option>
+					<option>Outros</option>
+				</select> 
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="mensagem" class="col-sm-2 col-form-label">Mensagem</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" id="mensagem" rows="3"></textarea>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-10">
+
+				</div>
+				<button type="submit" class="btn btn-primary">Enviar</button>
+			</div>
+		</form>
+		</div>
+		<br>
+		<br>
+		<div class="container" data-anime="bottom">
+			<h3 class="fique-ligado">LOCALIZAÇÃO</h3>
+			<iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.0032539525214!2d-46.66692548553806!3d-23.747263374367638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce45fdc95ef287%3A0x27b1be8399edac4d!2sR.%20Jos%C3%A9%20Landaeta%2C%20136%20-%20Jardim%20Sipramar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004849-230!5e0!3m2!1spt-BR!2sbr!4v1587765857959!5m2!1spt-BR!2sbr" width="800" height="370" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><br>
+			<p style="text-align: center">R. José Landaeta, 136 - Jardim Sipramar - São Paulo - SP, 04849-230</p>
+			<br><br>	
+		</div>
 		
 	</div> <!-- ===== Fecha o painel branco principal===== -->
+
+	<!-- ================= BARRA INFERIOR ======================== -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<img src="img/lubolos.png" width="142">
+				</div>
+				<div class="col-md-5">
+					<span class="titulo-rodape">LINKS UTEIS</span>
+					<ul class="navbar-nav">
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Parceiros</a></li>
+						<li><a href="#">Novidades</a></li>
+					</ul>
+				</div>
+				<div class="col-md-5">
+					<span class="titulo-rodape">REDES SOCIAIS</span>
+						<div class="row img-rodape">
+							<div class="3">
+								<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
+									<img src="img/facebook.png" width="50"> </a>
+								<a href="https://www.instagram.com/lubolos43/" target=”_blank”>
+									<img src="img/instagram.png" width="50"> </a>
+							</div>
+						</div>
+				</div>
+			</div>			
+		</div>
+	</footer>
 
 
 	<!-- JavaScript (Opcional) -->
