@@ -14,27 +14,56 @@
 	<!-- ================== Criando a animação ================================================== -->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			var $target = $('[data-anime]'),
-				animationClass = 'animate',
-				offset = $(window).height() * 3/4;
+			pulaPagina();
+			animacaoScroll();
+			topo();
 
-		function animeScroll(){
-			var documentTop = $(document).scrollTop();
-			
-			$target.each(function() {
-				var itemTop = $(this).offset().top;
-			if(documentTop > itemTop - offset){
-				$(this).addClass(animationClass);
-			} 
-			else{
-				$(this).removeClass(animationClass);
+			// ------------------ Adicionando elementos ao rolar página -----------------------
+			function animacaoScroll(){
+			var $target = $('[data-anime]'),
+			animationClass = 'animate',
+			offset = $(window).height() * 3/4;
+
+			function animeScroll(){
+				var documentTop = $(document).scrollTop();
+
+				$target.each(function() {
+					var itemTop = $(this).offset().top;
+					if(documentTop > itemTop - offset){
+						$(this).addClass(animationClass);
+					} 
+					else{
+						$(this).removeClass(animationClass);
+					}
+				})
 			}
-			})
-		}
-		$(document).scroll(function(){
-			animeScroll();
+			$(document).scroll(function(){
+				animeScroll();
+			});
+			}
+			// ------------------ Animação para rolar a página -----------------------
+			function pulaPagina(){
+				$('.navbar [href^="#"]').on('click', function(e) {
+					e.preventDefault();
+					var id = $(this).attr('href'),
+					targetOffset = $(id).offset().top;
+
+					$('html, body').animate({ 
+						scrollTop: targetOffset - 150
+					}, 2000);
+				});
+			}
+
+			// ------------------ Ao topo da página -----------------------
+			function topo(){
+				$('.navbar #home').click(function(){
+				$("html, body").animate({ scrollTop: 0 }, 2000);
+				return false;
+			});
+			}
+			
+			
 		});
-	});
 		
 	</script>
 	<!-- ========================================================================================= -->
@@ -42,7 +71,6 @@
 </head>
 <body>
 	
-
 	<div class="fixed-top">
 		<div class="container-fluid barra-redes-sociais">
 			<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
@@ -59,9 +87,9 @@
 	<nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #DA0D45;">
 		<div class="container">	
 			<!-- ===Logo=== -->
-		<a href="index.html">
-			<img src="img/lubolos.png" class="logo">
-		</a>
+			<a href="index.html">
+				<img src="img/lubolos.png" class="logo">
+			</a>
 			<!-- ===Menu Hamburguer=== -->
 			<button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target">
 				<span class="navbar-toggler-icon"></span>
@@ -70,8 +98,8 @@
 			<!-- ===Navegação=== -->
 			<div class="collapse navbar-collapse" id="nav-target">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a href="index.html" class="nav-link">Home</a>
+					<li class="nav-item" id="home">
+						<a href="#" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Trabalhos</a>
@@ -99,8 +127,8 @@
 	<!-- === Barra marrom/ logomarca === -->
 	<div>
 		<div class="barra-logomarca">
-		<img src="img/logomarca.png" class="logomarca">
-	</div>
+			<img src="img/logomarca.png" class="logomarca">
+		</div>
 	</div>
 	
 	<div class="container painel">
@@ -178,8 +206,8 @@
 		<!-- ========================== WHATSAPP ====================== -->
 		<div>
 			<a href="https://api.whatsapp.com/send?phone=5511975277051" target="_blank">
-			<img  class="whatsapp" src="https://images.tcdn.com.br/static_inst/integracao/imagens/whatsapp.png" />
-		</a>
+				<img  class="whatsapp" src="https://images.tcdn.com.br/static_inst/integracao/imagens/whatsapp.png" />
+			</a>
 		</div>	<!-- fecha código whatsapp -->
 
 		<br><br>
@@ -228,58 +256,59 @@
 		<br>
 
 		<!-- ======================== FORMULÁRIO DE CONTATO ======================== -->
-		<div class="container" data-anime="bottom">
-			<form>			
-			<h3 class="fique-ligado" id="contato">CONTATO</h3>
-			<div class="form-group row">
-				<label for="nome" class="col-sm-2 col-form-label">Nome</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="nome" placeholder="Nome">
+		<div class="container" data-anime="left" id="contato">
+			<form method="post" action="" id="ajax_form">			
+				<h3 class="fique-ligado">CONTATO</h3>
+				<div class="form-group row">
+					<label for="nome" class="col-sm-2 col-form-label">Nome</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="email" class="col-sm-2 col-form-label">E-mail</label>
-				<div class="col-sm-10">
-					<input type="email" class="form-control" id="email" placeholder="Email">
+				<div class="form-group row">
+					<label for="email" class="col-sm-2 col-form-label">E-mail</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="email" placeholder="Email" name="email">
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
-				<div class="col-sm-10">
-					<input type="phone" class="form-control" id="telefone" placeholder="Telefone">
+				<div class="form-group row">
+					<label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
+					<div class="col-sm-10">
+						<input type="phone" class="form-control" id="telefone" placeholder="Telefone" name="telefone">
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="campoComoNosConheceu" class="col-sm-2 col-form-label">Como nos conheceu?</label>
-				<div class="col-sm-10">
-				<select id="campoComoNosConheceu" class="form-control">
-					<option selected>Escolher...</option>
-					<option>Indicação</option>
-					<option>Google</option>
-					<option>Redes sociais</option>
-					<option>Já é cliente</option>
-					<option>Feiras e eventos</option>
-					<option>Outros</option>
-				</select> 
+				<div class="form-group row">
+					<label for="campoComoNosConheceu" class="col-sm-2 col-form-label">Como nos conheceu?</label>
+					<div class="col-sm-10">
+						<select id="campoComoNosConheceu" class="form-control">
+							<option selected>Escolher...</option>
+							<option>Indicação</option>
+							<option>Google</option>
+							<option>Redes sociais</option>
+							<option>Já é cliente</option>
+							<option>Feiras e eventos</option>
+							<option>Outros</option>
+						</select> 
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<label for="mensagem" class="col-sm-2 col-form-label">Mensagem</label>
-				<div class="col-sm-10">
-					<textarea class="form-control" id="mensagem" rows="3"></textarea>
+				<div class="form-group row">
+					<label for="mensagem" class="col-sm-2 col-form-label">Mensagem</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" id="mensagem" rows="3"></textarea>
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-sm-10">
+				<div class="form-group row">
+					<div class="col-sm-10">
 
+					</div>
+					<button type="submit" class="btn btn-primary">Enviar</button>
 				</div>
-				<button type="submit" class="btn btn-primary">Enviar</button>
-			</div>
-		</form>
+			</form>
 		</div>
 		<br>
 		<br>
-		<div class="container" data-anime="bottom">
+
+		<div class="container" data-anime="right" id="localizacao">
 			<h3 class="fique-ligado">LOCALIZAÇÃO</h3>
 			<iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.0032539525214!2d-46.66692548553806!3d-23.747263374367638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce45fdc95ef287%3A0x27b1be8399edac4d!2sR.%20Jos%C3%A9%20Landaeta%2C%20136%20-%20Jardim%20Sipramar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004849-230!5e0!3m2!1spt-BR!2sbr!4v1587765857959!5m2!1spt-BR!2sbr" width="800" height="370" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><br>
 			<p style="text-align: center">R. José Landaeta, 136 - Jardim Sipramar - São Paulo - SP, 04849-230</p>
@@ -305,24 +334,25 @@
 				</div>
 				<div class="col-md-5">
 					<span class="titulo-rodape">REDES SOCIAIS</span>
-						<div class="row img-rodape">
-							<div class="3">
-								<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
-									<img src="img/facebook.png" width="50"> </a>
+					<div class="row img-rodape">
+						<div class="3">
+							<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
+								<img src="img/facebook.png" width="50"> </a>
 								<a href="https://www.instagram.com/lubolos43/" target=”_blank”>
 									<img src="img/instagram.png" width="50"> </a>
+								</div>
 							</div>
 						</div>
+					</div>			
 				</div>
-			</div>			
-		</div>
-	</footer>
+			</footer>
 
 
-	<!-- JavaScript (Opcional) -->
-	<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-</body>
-</html>
+			<!-- JavaScript (Opcional) -->
+			<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+			<!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
+			<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		</body>
+		</html>
