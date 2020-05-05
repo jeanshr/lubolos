@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lu Bolos</title>
+	<link rel="icon" href="img/lubolos.png">
+
+	<!-- ============================Importação do Bootstrap================================== -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<!-- ============================Importação do estilo================================== -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<!-- Magnific Popup core CSS file -->
+	<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+
+	<!-- ================== Criando a animação ================================================== -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.parent-container').magnificPopup({
+  				delegate: 'a', // child items selector, by clicking on it popup will open
+  				type: 'image',
+  				gallery:{enabled:true}
+ 					 // other options
+			});
+		});		
+	</script>
+	<!-- ========================================================================================= -->
+
+</head>
+<body>
+	
+	<div class="fixed-top">
+		<div class="container-fluid barra-redes-sociais">
+			<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
+				<img src="img/facebook.png" class="img-redes-sociais">
+			</a>	
+			<a href="https://www.instagram.com/lubolos43/" target=”_blank”>
+				<img src="img/instagram.png" class="img-redes-sociais">
+			</a>	
+		</div>
+	</div>
+	
+	<!-- ===Barra de navegação=== -->
+
+	<nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #DA0D45;">
+		<div class="container">	
+			<!-- ===Logo=== -->
+			<a href="index.html">
+				<img src="img/lubolos.png" class="logo">
+			</a>
+			<!-- ===Menu Hamburguer=== -->
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- ===Navegação=== -->
+			<div class="collapse navbar-collapse" id="nav-target">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" id="home">
+						<a href="index.html" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Trabalhos</a>
+						<div class="dropdown-menu">
+							<a href="#" class="dropdown-item">Bolos</a>
+							<a href="#" class="dropdown-item">Festa na Caixa</a>
+							<a href="#" class="dropdown-item">Doces Simples</a>
+							<a href="#" class="dropdown-item">Doces Finos</a>
+							<a href="#" class="dropdown-item">Cupcakes</a>
+							<a href="#" class="dropdown-item">Pão de Mel</a>
+						</div>
+
+					</li>
+					<li class="nav-item">
+						<a href="#contato" class="nav-link">Contato</a>
+					</li>
+					<li class="nav-item">
+						<a href="#localizacao" class="nav-link">Localização</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- === Barra marrom/ logomarca === -->
+	<div>
+		<div class="barra-logomarca">
+			<img src="img/logomarca.png" class="logomarca">
+		</div>
+	</div>
+	
+	<div class="container painel">
+		<!-- Botão para acionar modal -->
+	
+
+	<!-- type="button" class="btn" data-toggle="modal" data-target="#modalExemplo"> -->
+
+	
+		<h3 class="titulo-trabalhos">BOLOS</h3>
+		<div class="parent-container">
+		 <div class="row fotos-trabalhos">
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-branco.jpg" class="image-link"><img src="img/carrossel/bolo-branco.jpg" width="180"></a>
+			</div>
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-cavalo.jpeg" class="image-link"><img src="img/carrossel/bolo-cavalo.jpeg" width="180"></a>
+			</div>
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-normal.png" class="image-link"><img src="img/carrossel/bolo-normal.png" width="180"></a>
+			</div>
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-piscina.png" class="image-link"><img src="img/carrossel/bolo-piscina.png" width="180"></a>
+			</div>	
+		</div>
+		<div class="row fotos-trabalhos">
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-branco.jpg" class="image-link"><img src="img/carrossel/bolo-branco.jpg" width="180"></a>
+			</div>
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-cavalo.jpeg" class="image-link"><img src="img/carrossel/bolo-cavalo.jpeg" width="180"></a>
+			</div>
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-normal.png" class="image-link"><img src="img/carrossel/bolo-normal.png" width="180"></a>
+			</div>
+			<div class="col-md-3">
+				<a href="img/carrossel/bolo-piscina.png" class="image-link"><img src="img/carrossel/bolo-piscina.png" width="180"></a>
+			</div>	
+		</div>		
+	</div>
+		<br>
+	</div> <!-- ===== Fecha o painel branco principal===== -->
+
+
+
+
+
+
+	<!-- ================= BARRA INFERIOR ======================== -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<img src="img/lubolos.png" width="142">
+				</div>
+				<div class="col-md-5">
+					<span class="titulo-rodape">LINKS UTEIS</span>
+					<ul class="navbar-nav">
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Parceiros</a></li>
+						<li><a href="#">Novidades</a></li>
+					</ul>
+				</div>
+				<div class="col-md-5">
+					<span class="titulo-rodape">REDES SOCIAIS</span>
+					<div class="row img-rodape">
+						<div class="3">
+							<a href="https://www.facebook.com/lu.bolos.37625" target=”_blank”>
+								<img src="img/facebook.png" width="50"> </a>
+								<a href="https://www.instagram.com/lubolos43/" target=”_blank”>
+									<img src="img/instagram.png" width="50"> </a>
+								</div>
+							</div>
+						</div>
+					</div>			
+				</div>
+			</footer>
+
+
+			<!-- JavaScript (Opcional) -->
+			<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+			<!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
+			
+			<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+			<!-- Magnific Popup core JS file -->
+			<script src="magnific-popup/jquery.magnific-popup.js"></script>
+		</body>
+		</html>

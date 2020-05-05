@@ -61,7 +61,7 @@ body {
 	background-color: #7E3200;
 	position: fixed;
 	margin-left: 300px;
-	z-index: 100000;
+	z-index: 100;
 	margin-top: 85px;
 	border-radius: 0px 0px 170px 170px;
 	width: 291px;
@@ -194,6 +194,17 @@ footer .navbar-nav a{
 
 }
 
+/*=========================Página TRABALHOS============*/
+.fotos-trabalhos{
+	margin-bottom: 30px;
+}
+
+.titulo-trabalhos{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
 
 
 
@@ -221,3 +232,17 @@ footer .navbar-nav a{
 	opacity: 1;
 	transform: translate3d(0px, 0px, 0px);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
